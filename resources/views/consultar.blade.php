@@ -62,8 +62,8 @@
           <td>{{$agendamento->Data_Contato}}</td>
           <td>{{$agendamento->Observacao}}</td>
           <td>
-            <a href="" class="btn btn-primary">Editar</a>
-            <a href="" class="btn btn-danger">Excluir</a>
+            <a href="/editar/{{$agendamento->id}}" class="btn btn-primary">Editar</a>
+            <a href="/excluir/{{$agendamento->id}}" class="btn btn-danger">Excluir</a>
           </td>
     </tr>
 

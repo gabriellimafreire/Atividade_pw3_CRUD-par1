@@ -20,8 +20,28 @@ class AgendamentoController extends Controller
 
         public function consulta(Request $request)
         {
-                $agendamentos = Agendamento::all();
+            $agendamentos = Agendamento::all();
             return view("consultar",['agendamentos' => $agendamentos]);
         }
+
+        public function excluir($id)   
+        {
+            Agendamento::where('id', $id)->delete();
+            return redirect("consultar");
+        }
+
+        public function editar($id)   
+        {
+            $agendamento = Agendamento::all()->where('id', $id)->first();
+            return view("editar",['agendamento' => $agendamento]);
+        }
+
+        public function atualizar(Request $request, $id)   
+        {
+            $agendamento = Agendamento::query()->findOrFail($id);
+            $agendamento->update($request->all());
+            return redirect("consultar");
+        }
+    
 }
 

@@ -18,4 +18,7 @@ use App\Models\agendamento;
 Route::get('/',[AgendamentoController::class, 'home']);
 Route::post('/create',[AgendamentoController::class, 'create']);
 Route::get('/consultar',[AgendamentoController::class, 'consulta']);
+Route::get('/excluir/{id}',[AgendamentoController::class, 'excluir']);
+Route::get('/editar/{id}',[AgendamentoController::class, 'editar']);
+Route::post('/atualizar/{id}',[AgendamentoController::class, 'atualizar']);
 
